@@ -178,7 +178,7 @@ def extract_page(url: str, use_js: bool = False) -> dict:
     If use_js=True, you can swap fetch_html() with a playwright renderer (see README).
     """
     html = fetch_html(url)
-    soup = BeautifulSoup(html, "lxml")
+    soup = BeautifulSoup(html, "html.parser")
     _remove_noise(soup)
 
     meta = extract_meta(soup)
